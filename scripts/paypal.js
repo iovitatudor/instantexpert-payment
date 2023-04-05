@@ -2,7 +2,7 @@ paypal.Buttons({
   // Order is created on the server and the order id is returned
   createOrder: (data, actions) => {
     const createdOrder = JSON.parse(localStorage.getItem('order'));
-    return fetch(`http://127.0.0.1:5000/api/payments/order/${createdOrder.id}?lang=ro`, {
+    return fetch(`https://core.instantexpert.online/api/payments/order/${createdOrder.id}?lang=ro`, {
       method: "post",
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ paypal.Buttons({
   },
   // Finalize the transaction on the server after payer approval
   onApprove: (data, actions) => {
-    return fetch(`http://127.0.0.1:5000/api/payments/order/${data.orderID}/capture?lang=ro`, {
+    return fetch(`https://core.instantexpert.online/api/payments/order/${data.orderID}/capture?lang=ro`, {
       method: "post",
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ paypal.Buttons({
         const element = document.getElementById('paypal-button-container');
         element.innerHTML = '<h3>Thank you for your payment!</h3>';
         const order = JSON.parse(localStorage.getItem('order'));
-        window.location.href = `http://localhost:3021/ro/callback/${order.expert_id}`;
+        window.location.href = `https://instantexpert.online/ro/callback/${order.expert_id}`;
         // Or go to another URL:  actions.redirect('thank_you.html');
       });
   }
