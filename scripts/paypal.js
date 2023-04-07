@@ -16,7 +16,8 @@ paypal.Buttons({
   },
   // Finalize the transaction on the server after payer approval
   onApprove: (data, actions) => {
-    return fetch(`https://core.instantexpert.online/api/payments/order/${data.orderID}/capture?lang=ro`, {
+    const createdOrder = JSON.parse(localStorage.getItem('order'));
+    return fetch(`https://core.instantexpert.online/api/payments/order/${data.orderID}/capture/${createdOrder.id}?lang=ro`, {
       method: "post",
       headers: {
         'Content-Type': 'application/json',
