@@ -27,14 +27,15 @@ paypal.Buttons({
       .then((response) => response.json())
       .then((orderData) => {
         // Successful capture! For dev/demo purposes:
-        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+        // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
         const transaction = orderData.purchase_units[0].payments.captures[0];
         // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
         // When ready to go live, remove the alert and show a success message within this page. For example:
         const element = document.getElementById('paypal-button-container');
         element.innerHTML = '<h3>Thank you for your payment!</h3>';
         const order = JSON.parse(localStorage.getItem('order'));
-        window.location.href = `https://instantexpert.online/ro/callback/${order.expert_id}`;
+        // console.log(order);
+        window.location.href = `https://instantexpert.online/ro/callback/${order.expert.id}`;
         // Or go to another URL:  actions.redirect('thank_you.html');
       });
   }
