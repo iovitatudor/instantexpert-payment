@@ -1,0 +1,137 @@
+{
+  id: '9K424379L36517525',
+  status: 'COMPLETED',
+  payment_source: {
+    …
+  },
+  purchase_units: Array(1),
+  payer: {
+    …
+  }
+  …
+} {
+  "id": "9K424379L36517525",
+  "status": "COMPLETED",
+  "payment_source": {
+    "paypal": {
+      "email_address": "iovitatudor@gmail.com",
+      "account_id": "86HW8U9XYE5XS",
+      "name": {
+        "given_name": "John",
+        "surname": "Smith"
+      },
+      "address": {
+        "country_code": "MD"
+      }
+    }
+  },
+  "purchase_units": [
+    {
+      "reference_id": "default",
+      "payment_instruction": {
+        "platform_fees": [
+          {
+            "amount": {
+              "currency_code": "EUR",
+              "value": "2.00"
+            },
+            "payee": {
+              "email_address": "sb-ahj6v25294068@business.example.com",
+              "merchant_id": "3UJFNUNVNFUYC"
+            }
+          }
+        ],
+        "disbursement_mode": "INSTANT"
+      },
+      "shipping": {
+        "name": {
+          "full_name": "John Smith"
+        },
+        "address": {
+          "address_line_1": "Mircea cel Batran 20",
+          "admin_area_2": "Chisinau",
+          "country_code": "MD"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "id": "6HS22839E2457012D",
+            "status": "COMPLETED",
+            "amount": {
+              "currency_code": "EUR",
+              "value": "10.00"
+            },
+            "final_capture": true,
+            "disbursement_mode": "INSTANT",
+            "seller_protection": {
+              "status": "NOT_ELIGIBLE"
+            },
+            "seller_receivable_breakdown": {
+              "gross_amount": {
+                "currency_code": "EUR",
+                "value": "10.00"
+              },
+              "paypal_fee": {
+                "currency_code": "EUR",
+                "value": "0.69"
+              },
+              "platform_fees": [
+                {
+                  "amount": {
+                    "currency_code": "EUR",
+                    "value": "2.00"
+                  },
+                  "payee": {
+                    "merchant_id": "3UJFNUNVNFUYC"
+                  }
+                }
+              ],
+              "net_amount": {
+                "currency_code": "EUR",
+                "value": "7.31"
+              }
+            },
+            "links": [
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/6HS22839E2457012D",
+                "rel": "self",
+                "method": "GET"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/6HS22839E2457012D/refund",
+                "rel": "refund",
+                "method": "POST"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/checkout/orders/9K424379L36517525",
+                "rel": "up",
+                "method": "GET"
+              }
+            ],
+            "create_time": "2023-04-18T09:52:46Z",
+            "update_time": "2023-04-18T09:52:46Z"
+          }
+        ]
+      }
+    }
+  ],
+  "payer": {
+    "name": {
+      "given_name": "John",
+      "surname": "Smith"
+    },
+    "email_address": "iovitatudor@gmail.com",
+    "payer_id": "86HW8U9XYE5XS",
+    "address": {
+      "country_code": "MD"
+    }
+  },
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/9K424379L36517525",
+      "rel": "self",
+      "method": "GET"
+    }
+  ]
+}
